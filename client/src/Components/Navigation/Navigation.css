@@ -1,0 +1,21 @@
+.nav-style {
+	width: 100%;
+	position: absolute;
+	justify-content: left;
+}
+
+.nav-style ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 20px;
+	float: left;
+}
+.nav-style li {
+	display: inline;
+	padding: 20px;
+
+}
+
+.nav-style li > a{
+	text-decoration: none;
+}

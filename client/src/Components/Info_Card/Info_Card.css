@@ -1,0 +1,126 @@
+.holder{
+	flex: 1 1 33%;
+
+}
+.card_container {
+	font-family: 'Nunito', sans-serif; 
+	height: 600px; 
+	width: 500px;
+	background-color: #CFBFF7;
+	box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
+	
+	transition: all .3s ease;
+  	position: relative;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+  	margin: auto;
+  	margin-top: 45px;
+
+  
+}
+.card_container:hover {
+	box-shadow: 2px 6px 30px rgba(0, 0, 0, 0.4);
+}
+
+.image_destination {
+	/*background-image: url('http://europeanbusinessmagazine.com/wp-content/uploads/2017/07/paris.jpg');*/
+	height: 70%;
+	width:100%;
+	background-size: cover;
+	background-position: right center;
+}
+.text_container{
+	
+	position: relative;
+	height: 30%;
+	width: 100%;
+	text-align: left;
+	padding: 5% 3% 3% 3%;
+}
+
+.card_container h1 {
+	margin:0;
+}
+
+.card_container p {
+	margin: 0 0 30px;
+}
+
+.subtitle {
+	font-weight: 700;
+	margin:0 0 15px;
+	font-size: 1.25rem;
+	color: #E76C67;
+}
+
+/*.expand-enter {
+	position:fixed;
+    
+    overflow: hidden;
+    background: white;
+    z-index: 1200;
+	opacity: 0;
+}
+
+.expand-enter-active,.expand-enter-done {
+	top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: auto;
+	opacity: 1;
+	transition: all 3s cubic-bezier(0.23, 1, 0.32, 1);
+	
+}
+
+.expand-exit {
+	top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: auto;
+	opacity: 1;
+}
+
+.expand-exit-active{
+	top: 0 ;
+    right: 0 ;
+    bottom: 0 ;
+    left: 0 ;
+    width: 100vw ;
+    height: 100vh ;
+	position:fixed;
+    transition: all 3s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    background: white;
+    z-index: 1200;
+	opacity: 0;
+	}*/
+
+.modal-container{
+    position:fixed;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: white;
+    z-index: 1200;
+}
+.modal-container-enter-done {
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+

@@ -1,0 +1,103 @@
+.body-main{
+	margin: 0px;
+	padding: 0px;
+	background-color: #20DECEFF;
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+}
+.Title-container{
+	background-color: #BFD7EA;
+	width: 100%;
+	height: 30vh;
+	text-align: center;
+
+	display: inline-block;
+	}
+
+.title-text{
+	position: relative;
+	top: 50%;
+	font-weight: 500;
+	transform: translateY(-50%);
+}
+
+.tabs {
+	text-decoration: none;
+	margin: 2%;
+	color: black;
+
+}
+
+
+.tabs a:active, a:hover{
+	color: #fa923f;
+}
+
+.tabs-container {
+	margin: auto;
+	border: solid black ;
+	border-width: 2px 2px 0px 2px;
+	border-radius: 5px 5px 0px 0px;
+	width: 100%;
+}
+
+.tabs-container a:active, a:hover{
+	color: #fa923f;
+}
+
+.alltabs {
+	margin-top: 1%;
+	border-radius: 20px;
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+
+}
+
+.cards{
+	display: inline-block;
+	width: 100%;
+}
+
+.Card_Info{
+	margin-left: 2%
+}
+
+.card_holder {
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.wrapper {
+	/*width: 100%;
+	overflow: hidden;*/
+}
+
+.fade-enter, .fade-appear {
+	opacity: 0;
+	transform: scale(0);
+}
+
+.fade-enter-active, .fade-appear-active {
+	opacity: 1;
+	transform: scale(1);
+	transition: all .5s ease-out;
+}
+
+.fade-exit {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.fade-exit-active{
+	opacity: 0;
+	transform: scale(0);
+	transition: all .5s ease-out;
+}
+
+.card-holder-style{
+	background-color: #8B80F9  ;
+}
