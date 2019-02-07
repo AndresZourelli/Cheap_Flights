@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import InputForm from "../inputForm/inputForm";
 import "./controlPanel.css";
+import { connect } from 'react-redux';
+import { newFlight } from '../../actions/cityAction';
+
 class ControlPanel extends Component {
 	state = {
 		newFlightForm: {
@@ -100,12 +103,8 @@ class ControlPanel extends Component {
 			flightData: formData
 		}
 
-		axios.post('http://localhost:5000/NewFlights', packaged)
-			.then(response => {
-				this.setState({loading:false});
-			}).catch(error => {
-				this.setState({loading:false});
-			});
+		this.props.newFlight(packaged);
+
 		//Resets State after upload complete
 		for(let formElementIdentifier in this.state.newFlightForm){
 			this.setState({ [formElementIdentifier] : ''}) 
@@ -158,4 +157,6 @@ class ControlPanel extends Component {
 		);
 	}
 }
-export default ControlPanel;
+
+
+export default connect(null, { newFlight })(ControlPanel);

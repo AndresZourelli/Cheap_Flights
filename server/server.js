@@ -30,3 +30,6 @@ app.post('/NewFlights',data =>{
 	db.schema.hasTable('boston').then(res=>console.log(res))
 	})
 	
+app.get('/boston', (req,res,next) =>{
+  db.select('*').table('boston').then(ress=> { res.json({payload: ress})})
+})

@@ -2,14 +2,15 @@ import React from 'react';
 
 const City_Page =(props)=>{
 	
-	const CityId = parseInt(props.match.params.id);
-    const City = props.Data.Tabs.find(City =>
-    City.id === CityId);
-	console.log(props.match);
+	const CityId = props.match.params.id;
+    const City = props.Data[CityId]
+	console.log(City);
 	return(
 		<div>
 			<div>
-				<img src={City.mainImageUrl} alt={City.id}/>
+			{console.log(props)}
+				<img src={props.mainImageUrl} alt={City.id}/>
+			
 			</div>
 		</div>)
 }

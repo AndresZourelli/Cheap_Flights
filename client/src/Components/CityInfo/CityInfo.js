@@ -5,13 +5,13 @@ import axios from 'axios';
 const CityInfo = ({ history, CityData, ...rest }) => {
     let element = null;
 
-    let dataPull = axios();
+   
     const onOpen = (event) => {
 
         const { top, right, bottom, left, width, height } = element.getBoundingClientRect();
 
         history.push({
-            pathname: `/location/${CityData.departingCity}`,
+            pathname: `/location/${CityData.CityName}`,
             state: {
                 to: 'modal',
                 meta: {
@@ -24,8 +24,9 @@ const CityInfo = ({ history, CityData, ...rest }) => {
 
 
     return (
-    <div ref={(el)=>{element=el;}}>
+    <div className='holder' ref={(el)=>{element=el;}}>
       <Info_Card CityData={CityData} onClick={onOpen} {...rest}/>
+    
     </div>
     )
 }
