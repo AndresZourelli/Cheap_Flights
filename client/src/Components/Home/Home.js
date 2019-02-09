@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import "./Home.css";
 import { withRouter } from "react-router-dom";
 import CityInfo from '../CityInfo/CityInfo.js';
 import Navigation from '../Navigation/Navigation';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { fetchCities } from '../../actions/cityAction.js';
-
-
 class Home extends Component {
-	componentWillMount(){
-		this.props.fetchCities();
-	}
-
-  
     render() {
-        const infer = this.props.city.map((data, k) => (
+        const infer = (this.props.citys.payload || []).map((data, k) => (
 
             <div key={k} className="holder">
 						
@@ -24,7 +14,7 @@ class Home extends Component {
 						
 			</div>
 
-        ))
+        ));
    		console.log(this.props.citys.payload)
         return (
             <div>
@@ -37,7 +27,7 @@ class Home extends Component {
 	        	</div>
 	        </div>
 	        <div className="card_holder">
-	        
+				{infer}
 	        </div>
         
         </div>
@@ -48,4 +38,4 @@ class Home extends Component {
 const mapStateToProps = state => ({
 	citys: state.citys.cities
 })
-export default connect(mapStateToProps, { fetchCities })(withRouter(Home));
+export default connect(mapStateToProps)(withRouter(Home));

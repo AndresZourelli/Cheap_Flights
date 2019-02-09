@@ -1,7 +1,8 @@
 .holder{
-	flex: 1 1 33%;
-    background-color: #8B80F9;
-
+	flex: 1 0 33%;
+	background-color: #8B80F9;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .card_container {
 	font-family: 'Nunito', sans-serif; 
@@ -15,9 +16,7 @@
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
   	margin: auto;
-  	margin-top: 45px;
-
-  
+	margin-top: 45px;
 }
 .card_container:hover {
 	box-shadow: 2px 6px 30px rgba(0, 0, 0, 0.4);

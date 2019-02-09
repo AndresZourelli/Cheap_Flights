@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import InputForm from "../inputForm/inputForm";
 import "./controlPanel.css";
 import { connect } from 'react-redux';

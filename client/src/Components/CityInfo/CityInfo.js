@@ -1,17 +1,19 @@
 import React from 'react';
-import Info_Card from "../Info_Card/Info_Card.js";
+import InfoCard from "../Info_Card/Info_Card.js";
+import { connect } from 'react-redux';
+import { fetchCities } from '../../actions/cityAction.js';
 import { withRouter } from "react-router-dom";
-import axios from 'axios';
+
 const CityInfo = ({ history, CityData, ...rest }) => {
     let element = null;
 
-   
+    console.log(CityData);
     const onOpen = (event) => {
 
         const { top, right, bottom, left, width, height } = element.getBoundingClientRect();
 
         history.push({
-            pathname: `/location/${CityData.CityName}`,
+            pathname: `/location/${CityData.departingcity}`,
             state: {
                 to: 'modal',
                 meta: {
@@ -25,9 +27,14 @@ const CityInfo = ({ history, CityData, ...rest }) => {
 
     return (
     <div className='holder' ref={(el)=>{element=el;}}>
-      <Info_Card CityData={CityData} onClick={onOpen} {...rest}/>
+      <InfoCard CityData={CityData} onClick={onOpen} {...rest}/>
     
     </div>
     )
 }
-export default withRouter(CityInfo);
+const mapStateToProps = state => ({
+	citys: state.citys.cities
+})
+
+export default connect(mapStateToProps, { fetchCities })(withRouter(CityInfo));
+
