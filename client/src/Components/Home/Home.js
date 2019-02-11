@@ -13,9 +13,7 @@ class Home extends Component {
 	    		<CityInfo CityData={data} key={data} {...this.props}/>
 						
 			</div>
-
         ));
-   		console.log(this.props.citys.payload)
         return (
             <div>
 	        <div className="Title-container">
@@ -23,7 +21,6 @@ class Home extends Component {
 	        	<div className='title-text'>
 	        		<h1>Welcome to Cheap Flights</h1>
 	        		<p>Where you can find the cheapest flights with no additional effort.</p>
-
 	        	</div>
 	        </div>
 	        <div className="card_holder">

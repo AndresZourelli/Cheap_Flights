@@ -3,7 +3,7 @@ import './App.css';
 import {  Route, Switch, withRouter } from "react-router-dom";
 import Home from "./Components/Home/Home.js";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import CityPage from "./Components/Input/Input.js";
+import CityPage from "./Components/CityData/CityData";
 import ControlPanel from './Components/controlPanel/controlPanel.js';
 import { connect } from 'react-redux';
 import { fetchCities } from './actions/cityAction';
