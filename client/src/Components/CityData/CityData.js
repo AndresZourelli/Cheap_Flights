@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCities } from '../../actions/cityAction.js';
 import { withRouter } from "react-router-dom";
-
+import './CityData.css';
 const CityPage =(props)=>{
 
     
@@ -32,7 +32,7 @@ const CityPage =(props)=>{
 	{red !== undefined && 
 		<div className="MainCity">
 			<div className="image-container">
-				a{/* <img src={props.citys.payload.mainImageUrl} alt=""/> */}
+				{/* <img src={props.citys.payload.mainImageUrl} alt=""/> */}
 			</div>
 			{flights}
 		</div>
