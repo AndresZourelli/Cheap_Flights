@@ -7,11 +7,8 @@ import { connect } from 'react-redux';
 class Home extends Component {
     render() {
         const infer = (this.props.citys.payload || []).map((data, k) => (
-
-            <div key={k} className="holder">
-						
+            <div key={k} className="holder">	
 	    		<CityInfo CityData={data} key={data} {...this.props}/>
-						
 			</div>
         ));
         return (
