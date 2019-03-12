@@ -1,0 +1,10 @@
+.ticket {
+    display: flex;
+    border: 3px red solid;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+h2 {
+    flex: 0 1 25%;
+}
