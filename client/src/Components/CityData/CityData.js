@@ -5,25 +5,53 @@ import { withRouter } from 'react-router-dom';
 import './CityData.css';
 const CityPage = (props) => {
 	const flights = (props.citys.payload || []).map((flight) => (
-		<div key={flight.id}>
-			<div className="ticket">
-				<h1>{flight.departingcity}</h1>
-				<h2>Arrival Destination: {flight.arrivingcity}</h2>
-				<h2>Arrival Flight Duration: {flight.flightdurationarriving}</h2>
-				<h2>Arrival Flight Date: {flight.arrivingdate}</h2>
-				<h2>Departing Date: {flight.departingdate}</h2>
-				<h2>Departing Flight Duration: {flight.flightdurationdeparting}</h2>
-				<h2>Flight Cost: {flight.flightcost}</h2>
-				<h2>Website: {flight.websiteurl}</h2>
-				<h2>Date Added: {flight.added}</h2>
+		<div key={flight.id} >
+			<div className="ticket front">
+				<h2>
+					<strong>Traveling To:</strong> {flight.arrivingcity}
+				</h2>
+				<h2>
+					<strong>Arrival Flight Duration:</strong> {flight.flightdurationarriving}
+				</h2>
+				<h2>
+					<strong>Arrival Flight Date:</strong> {flight.arrivingdate}
+				</h2>
+				<h2>
+					<strong>Departing Date:</strong> {flight.departingdate}
+				</h2>
+				<h2>
+					<strong>Departing Flight Duration:</strong> {flight.flightdurationdeparting}
+				</h2>
+				<h2>
+					<strong>Flight Cost:</strong> {flight.flightcost}
+				</h2>
+				<h2>
+					<strong>Website:</strong> {flight.websiteurl}
+				</h2>
+				<h2>
+					<strong>Date Added:</strong> {flight.added}
+				</h2>
 				<br />
+				<div className='shadowbox'>
+					grey shadow
+				</div>
 			</div>
+			
 		</div>
 	));
 
+
+	var cityName = []
+	if (props.citys.payload) {
+		cityName = props.citys.payload[0].departingcity;
+	}
+		
 	const red = props.citys.payload;
 	return (
 		<div>
+			<div className="Title">
+				<h1>Flights from {cityName}</h1>
+			</div>
 			{red === undefined && (
 				<div>
 					<h1>loading....</h1>
@@ -35,6 +63,8 @@ const CityPage = (props) => {
 					{flights}
 				</div>
 			)}
+
+		
 		</div>
 	);
 };
