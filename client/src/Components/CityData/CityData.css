@@ -1,9 +1,18 @@
-.ticket {
+.CardContainer {
     display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.ticket {
+    flex: 1 0 25%;
     border: 3px red solid;
     justify-content: space-evenly;
     flex-wrap: wrap;
     overflow: hidden;
+    margin-left: 15px;
+    margin-top: 10px;
     position: relative;
 }
 
@@ -12,16 +21,18 @@ h2 {
 }
 
 .shadowbox {
+    bottom: 0;
     background-color: rgba(211, 211, 211, .8);
     position: absolute;
-    transform: translateY(200px);
-
+    transform: translateY(500px);
     width: 100%;
     height: 100%;
+    
+    
 }
 
 .ticket:hover .shadowbox {
-    transform: translateY(0px);
+    transform: translateY(0px) translateX(0px);
     transition: .5s;
-    visibility: none;
+    z-index: 2;
 }

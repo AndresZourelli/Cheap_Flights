@@ -6,7 +6,8 @@ import './CityData.css';
 const CityPage = (props) => {
 	const flights = (props.citys.payload || []).map((flight) => (
 		<div key={flight.id} >
-			<div className="ticket front">
+			<div className="ticket">
+				<div className="image-container">{/* <img src={props.citys.payload.mainImageUrl} alt=""/> */}</div>
 				<h2>
 					<strong>Traveling To:</strong> {flight.arrivingcity}
 				</h2>
@@ -52,18 +53,19 @@ const CityPage = (props) => {
 			<div className="Title">
 				<h1>Flights from {cityName}</h1>
 			</div>
-			{red === undefined && (
-				<div>
-					<h1>loading....</h1>
-				</div>
-			)}
-			{red !== undefined && (
-				<div className="MainCity">
-					<div className="image-container">{/* <img src={props.citys.payload.mainImageUrl} alt=""/> */}</div>
-					{flights}
-				</div>
-			)}
+			<div className='CardContainer'>
+				{red === undefined && (
+					<div>
+						<h1>loading....</h1>
+					</div>
+				)}
+				
+				{red !== undefined && (
+					<div className="CardContainer">{flights}</div>
 
+				)}
+			</div>
+			
 		
 		</div>
 	);
