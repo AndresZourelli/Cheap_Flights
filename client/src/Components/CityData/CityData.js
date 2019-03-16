@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchCities } from '../../actions/cityAction.js';
+import { specificCity } from '../../actions/cityAction.js';
 import { withRouter } from 'react-router-dom';
 import './CityData.css';
 const CityPage = (props) => {
@@ -40,8 +40,8 @@ const CityPage = (props) => {
 			
 		</div>
 	));
-
-
+	(props.GetSpecificCity(props.match.params.id))
+		console.log(props)
 	var cityName = []
 	if (props.citys.payload) {
 		cityName = props.citys.payload[0].departingcity;
@@ -70,8 +70,16 @@ const CityPage = (props) => {
 		</div>
 	);
 };
-const mapStateToProps = (state) => ({
-	citys: state.citys.cities
+const mapStateToProps = (state, ownProps) => ({
+	citys: state.citys.cities,
+	query: ownProps.match.id
 });
 
-export default withRouter(connect(mapStateToProps, { fetchCities })(CityPage));
+const mapDispatchToProps = (dispatch) => {
+	return{
+		GetSpecificCity: (cityName) =>{
+			dispatch(specificCity(cityName))
+		}
+	}
+}
+export default withRouter(connect(mapStateToProps, mapDispatchToProps )(CityPage));

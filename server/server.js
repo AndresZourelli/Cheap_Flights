@@ -28,8 +28,12 @@ app.listen(5000,()=> console.log('Listening on port 5000'))
 app.post('/NewFlights',data =>{
 	console.log(data.body);
 	db.schema.hasTable('boston').then(res=>console.log(res))
-	})
+  })
 	
-app.get('/boston', (req,res,next) =>{
+app.get('/getCities', (req,res,next) =>{
   db.select('*').table('boston').then(ress=> { res.json({payload: ress})})
+})
+
+app.get('/fetchCity', (req,res,next) =>{
+  db.select('*').table(`${req.body.cityName}`).then(ress=> { res.json({payload: ress})})
 })
