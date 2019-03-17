@@ -7,13 +7,32 @@ const CityPage = (props) => {
 	const flights = (props.citys.payload || []).map((flight) => (
 		<div key={flight.id} >
 			<div className="ticket">
-				<div className="price">
-					<h2>
-						<strong>${flight.flightcost}</strong> 
-					</h2>
-				</div>
-				<div className="image-container"><img src={flight.mainimageurl} alt=""/></div>
-				<div className='Title_Date'>
+					<div className="price-container">
+						<div className="Price-data">
+							<h2>
+								<strong>${flight.flightcost}</strong> 
+							</h2>
+						</div>
+						
+					</div>
+					<div className="image-container">
+						<img src={flight.mainimageurl} alt=""/>
+						<div className='shadowbox'>
+						<h4>
+							<strong>Arrival Flight Duration:</strong> {flight.flightdurationarriving}
+						</h4>
+						<h4>
+							<strong>Departing Flight Duration:</strong> {flight.flightdurationdeparting}
+						</h4>
+						<h4>
+							<strong>Website:</strong> {flight.websiteurl}
+						</h4>
+						<h4>
+							<strong>Date Added:</strong> {flight.added}
+						</h4>
+						</div>
+					</div>
+					<div className='Title_Date'>
 					<h2>
 						&ensp; 
 						<strong> {flight.arrivingcity}</strong> 
@@ -27,22 +46,9 @@ const CityPage = (props) => {
 						<strong>{flight.departingdate}</strong> 
 					</h4>
 				</div>
-				<div className='shadowbox'>
-					grey shadow
-					<h2>
-						<strong>Arrival Flight Duration:</strong> {flight.flightdurationarriving}
-					</h2>
-					<h2>
-						<strong>Departing Flight Duration:</strong> {flight.flightdurationdeparting}
-					</h2>
-					<h2>
-						<strong>Website:</strong> {flight.websiteurl}
-					</h2>
-					<h2>
-						<strong>Date Added:</strong> {flight.added}
-					</h2>
+				
 				</div>
-			</div>
+				
 			
 		</div>
 	));

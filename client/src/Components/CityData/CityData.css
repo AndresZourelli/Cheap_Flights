@@ -14,7 +14,7 @@
     margin-left: 15px;
     margin-top: 10px;
     position: relative;
-    height: 500px;
+    height: 400px;
     width: 450px;
 }
 
@@ -23,24 +23,18 @@ h2 {
 }
 
 .shadowbox {
+    padding: 1%;
     bottom: 0;
     background-color: rgba(211, 211, 211, .95);
     position: absolute;
     transform: translateY(500px);
     width: 100%;
-    height: 100%;
-    
-    
-}
-
-.ticket:hover .shadowbox {
-    transform: translateY(0px) translateX(0px);
-    transition: .5s;
-    z-index: 4;
+    height: 100%;   
 }
 
 .image-container{
-    height: 50%;
+    position: relative;
+    height: 60%;
     width: 100%;
     overflow: hidden;
 }
@@ -51,25 +45,36 @@ h2 {
     
 }
 
+.image-container:hover .shadowbox {
+    bottom: 0;
+    transform: translateY(0px) translateX(0px);
+    transition: .5s;
+    z-index: 4;
+}
+
 .Title_Date {
     padding: 5%;
     text-align: left;
     position: relative;
 }
 
-.price{
+.price-container{
     text-align: center;
-    padding: .4%;
-    border-radius: 5px;
-    top: 5%;
-    right: 5%;
+    padding: .6% 0;
     position: absolute;
     z-index: 3;
-    color: #fa923f;
-    background-color: #923ffa;
+    color: white;
+    background-color: #686383;
+    opacity: .9;
+    width: 100%;
 }
-.price h2{
+.price-container h2{
     margin: 0;
     padding: 0;
     height: 100%;
+}
+
+.Price-data {
+    padding-right: 2%;
+    text-align: right;
 }
