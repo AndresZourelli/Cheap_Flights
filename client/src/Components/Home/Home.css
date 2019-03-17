@@ -30,7 +30,7 @@
 }
 
 
-.tabs a:active, a:hover{
+.tabs a:active,.tabs a:hover{
 	color: #fa923f;
 }
 
@@ -42,7 +42,7 @@
 	width: 100%;
 }
 
-.tabs-container a:active, a:hover{
+.tabs-container a:active,.tabs-container a:hover{
 	color: #fa923f;
 }
 
@@ -69,29 +69,6 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-}
-
-
-.fade-enter, .fade-appear {
-	opacity: 0;
-	transform: scale(0);
-}
-
-.fade-enter-active, .fade-appear-active {
-	opacity: 1;
-	transform: scale(1);
-	transition: all .5s ease-out;
-}
-
-.fade-exit {
-	opacity: 1;
-	transform: scale(1);
-}
-
-.fade-exit-active{
-	opacity: 0;
-	transform: scale(0);
-	transition: all .5s ease-out;
 }
 
 .card-holder-style{

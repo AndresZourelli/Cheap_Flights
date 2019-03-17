@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import "./Home.css";
 import { withRouter } from "react-router-dom";
-import CityInfo from '../CityInfo/CityInfo.js';
 import Navigation from '../Navigation/Navigation';
 import { connect } from 'react-redux';
+import InfoCard from "../Info_Card/Info_Card.js";
 class Home extends Component {
     render() {
         const infer = (this.props.citys.payload || []).map((data, k) => (
             <div key={k} className="holder">	
-	    		<CityInfo CityData={data} key={data} {...this.props}/>
+	    		< InfoCard CityData={data} key={data} {...this.props}/>
 			</div>
         ));
         return (
@@ -30,6 +30,6 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-	citys: state.citys.cities
+	citys: state.citys.availableCities,
 })
 export default connect(mapStateToProps)(withRouter(Home));
