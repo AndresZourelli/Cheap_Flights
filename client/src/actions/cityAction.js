@@ -35,7 +35,7 @@ export const specificCity = (cityName) => dispatch => {
 		headers: {
 			'content-type':'application/json'
 		},
-		body:{
+		data:{
 			cityName: cityName
 		}
 	})

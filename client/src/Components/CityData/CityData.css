@@ -14,6 +14,8 @@
     margin-left: 15px;
     margin-top: 10px;
     position: relative;
+    height: 500px;
+    width: 450px;
 }
 
 h2 {
@@ -22,7 +24,7 @@ h2 {
 
 .shadowbox {
     bottom: 0;
-    background-color: rgba(211, 211, 211, .8);
+    background-color: rgba(211, 211, 211, .95);
     position: absolute;
     transform: translateY(500px);
     width: 100%;
@@ -34,5 +36,40 @@ h2 {
 .ticket:hover .shadowbox {
     transform: translateY(0px) translateX(0px);
     transition: .5s;
-    z-index: 2;
+    z-index: 4;
+}
+
+.image-container{
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
+    position: relative;
+    max-width: 100%;
+    
+}
+
+.Title_Date {
+    padding: 5%;
+    text-align: left;
+    position: relative;
+}
+
+.price{
+    text-align: center;
+    padding: .4%;
+    border-radius: 5px;
+    top: 5%;
+    right: 5%;
+    position: absolute;
+    z-index: 3;
+    color: #fa923f;
+    background-color: #923ffa;
+}
+.price h2{
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }

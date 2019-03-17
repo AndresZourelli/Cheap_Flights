@@ -34,6 +34,6 @@ app.get('/getCities', (req,res,next) =>{
   db.select('*').table('boston').then(ress=> { res.json({payload: ress})})
 })
 
-app.get('/fetchCity', (req,res,next) =>{
-  db.select('*').table(`${req.body.cityName}`).then(ress=> { res.json({payload: ress})})
+app.post('/fetchCity', (req,res,next) =>{
+  db.select('*').table(`${req.body.cityName}`).then(ress=> { res.json({payload: ress})}).catch()
 })
