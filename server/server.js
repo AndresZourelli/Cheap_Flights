@@ -31,9 +31,13 @@ app.post('/NewFlights',data =>{
   })
 	
 app.get('/getCities', (req,res,next) =>{
-  db.select('*').table('boston').then(ress=> { res.json({payload: ress})})
+  db.select('*').table('city_names').then(ress=> { res.json({payload: ress})})
 })
 
 app.post('/fetchCity', (req,res,next) =>{
-  db.select('*').table(`${req.body.cityName}`).then(ress=> { res.json({payload: ress})}).catch()
+
+  db('Cities').where({
+    departingcity: `${req.body.cityName}`
+  }).then(ress=> { res.json({payload: ress}) }  ).catch()
+
 })

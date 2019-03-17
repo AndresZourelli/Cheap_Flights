@@ -8,7 +8,6 @@ export const fetchCities = (value) => dispatch => {
 		.then(cities => dispatch({
 			type: FETCH_CITIES,
 			payload: cities.data,
-			payload2: value
 		})
 	).then(res=>console.log('success fetchCities',res));
 }
@@ -41,11 +40,6 @@ export const specificCity = (cityName) => dispatch => {
 	})
 	.then(cities => dispatch({
 		type: SPECIFIC_CITY,
-		payload: cityName
+		payload: cities.data
 	})).then(console.log('Success City Added'))
-	console.log(cityName)
-	dispatch({
-		type: SPECIFIC_CITY,
-		payload: cityName
-	})
 }

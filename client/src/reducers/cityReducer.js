@@ -3,7 +3,8 @@ import { FETCH_CITIES, NEW_FLIGHT, SPECIFIC_CITY } from '../actions/types';
 const initialState = {
 	cities: [],
 	flight: {},
-	query:""
+	query:[],
+	availableCities:[]
 };
 
 export default function(state = initialState, action){
@@ -12,7 +13,7 @@ export default function(state = initialState, action){
 			console.log('Fetch reducing')
 			return {
 				...state,
-				cities: action.payload,
+				availableCities: action.payload,
 			};
 
 		case NEW_FLIGHT:
@@ -25,7 +26,7 @@ export default function(state = initialState, action){
 			console.log('Specific reducing')
 			return {
 				...state,
-				query: action.payload
+				cities: action.payload
 			}	
 		default:
 			return state;
