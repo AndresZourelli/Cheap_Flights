@@ -4,14 +4,14 @@
     height: auto;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 .ticket {
     flex: 1 0 25%;
     border: 3px red solid;
-    justify-content: space-evenly;
     flex-wrap: wrap;
     overflow: hidden;
-    margin-left: 15px;
+
     margin-top: 10px;
     position: relative;
     height: 400px;
