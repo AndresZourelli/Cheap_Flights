@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { specificCity } from '../../actions/cityAction.js';
 import { withRouter } from 'react-router-dom';
 import './CityData.css';
+var pageChange = false;
 const CityPage = (props) => {
 	const flights = (props.citys.payload || []).map((flight) => (
 		<div key={flight.id} >
@@ -52,12 +53,18 @@ const CityPage = (props) => {
 			
 		</div>
 	));
-	(props.GetSpecificCity(props.match.params.id))
+	
+	if( pageChange===false ){
+		props.GetSpecificCity(props.match.params.id);
+		pageChange = true;
+	}
+	
 	var cityName = []
 	if (props.citys.payload) {
+		
 		cityName = props.citys.payload[0].departingcity;
 	}
-		
+	console.log('hi')	
 	const red = props.citys.payload;
 	return (
 		<div>

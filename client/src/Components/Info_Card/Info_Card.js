@@ -14,7 +14,6 @@ const Info_Card = ({ history, CityData, expanded = false, showActions = false, g
         <img className="image_destination" src={CityData.cityimage} alt={CityData.cityname}/>
         <div className="text_container">
           <h1>{CityData.cityname}</h1>
-          <div className="subtitle">City of Love</div>
           <p>Click for More Details</p>
         </div>
       </Link>

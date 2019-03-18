@@ -5,6 +5,9 @@ import Navigation from '../Navigation/Navigation';
 import { connect } from 'react-redux';
 import InfoCard from "../Info_Card/Info_Card.js";
 class Home extends Component {
+	onPageLoad = () => {
+		console.log('hi')
+	}
     render() {
         const infer = (this.props.citys.payload || []).map((data, k) => (
             <div key={k} className="holder">	
