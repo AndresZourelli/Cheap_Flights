@@ -82,7 +82,6 @@ class CityPage extends Component {
 					
 					{red !== undefined && (
 						<div className="CardContainer">{flights}</div>
-	
 					)}
 				</div>
 				
