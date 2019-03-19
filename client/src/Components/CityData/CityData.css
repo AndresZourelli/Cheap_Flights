@@ -1,30 +1,30 @@
+
 .Title-Container{
     height: 30vh;
     width: 100%;
-    background-color: #b0c4de;
+    background-color: #83aee6;
 }
 
 .Title{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 body {
-    background-color: #b3b0de;
+    background-color: white;
 }
 .CardContainer {
-     
     background-color: #b3b0de;
     display: flex;
     width: 100%;
-    height: auto;
+    height: 100%;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
 }
 .ticket {
     margin-top: 5%;
+    margin-bottom: 5%;
     flex: 1 1 25%;
     flex-wrap: wrap;
     overflow: hidden;
@@ -103,3 +103,27 @@ h2 {
     padding-right: 2%;
     text-align: right;
 }
+.CityData-body {
+    height:100%;
+}
+
+.CityData-footer {
+    display: flex;
+    flex-flow: column;
+    height:auto;
+    background-color: rebeccapurple;
+    width: 100%;
+}
+
+.CityData-footer h1 {
+    flex: 1 1 auto;
+}
+
+.Container {
+    height: auto;
+}
+@media screen and (min-width: 1920px) {
+    .Container {
+      height: 100%;
+    }
+  }

@@ -10,7 +10,7 @@ class CityPage extends Component {
 	}
 	render(){
 		const flights = (this.props.citys.payload || []).map((flight) => (
-			<div key={flight.id} >
+			<div key={flight.id} className='CityData-items'>
 				<div className="ticket">
 						<div className="price-container">
 							<div className="Price-data">
@@ -68,12 +68,12 @@ class CityPage extends Component {
 		const red = this.props.citys.payload;
 		console.log(red)
 		return (
-			<div>
+			<div className='CityData-body'>
 				<Navigation></Navigation>
 				<div className="Title-Container Title">
 					<h1>Flights from {cityName}</h1>
 				</div>
-				<div className='CardContainer'>
+				<div className='Container'>
 					{red === undefined && (
 						<div>
 							<h1>loading....</h1>
@@ -85,7 +85,12 @@ class CityPage extends Component {
 					)}
 				</div>
 				
-			
+			<div className='CityData-footer'>
+			<h1>
+			footer
+			</h1>
+
+			</div>
 			</div>
 		);
 	

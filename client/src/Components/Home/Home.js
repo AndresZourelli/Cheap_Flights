@@ -15,7 +15,7 @@ class Home extends Component {
 			</div>
         ));
         return (
-            <div>
+            <div className="full-height">
 	        <div className="Title-container">
 	        <Navigation/>
 	        	<div className='title-text'>
@@ -23,7 +23,7 @@ class Home extends Component {
 	        		<p>Where you can find the cheapest flights with no additional effort.</p>
 	        	</div>
 	        </div>
-	        <div className="card_holder">
+	        <div className="card_holder card-holder-style">
 				{infer}
 	        </div>
         

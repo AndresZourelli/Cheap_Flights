@@ -19,3 +19,7 @@
 .nav-style li > a{
 	text-decoration: none;
 }
+
+a:active,a:hover{
+	color: #fa923f;
+}

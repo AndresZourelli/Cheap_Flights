@@ -16,7 +16,7 @@ class App extends Component {
         return (
           <div className="App">
             <div className="view-container">
-            <TransitionGroup>
+            <TransitionGroup id='full-height'>
               <CSSTransition timeout={3000} classNames="fly" appear>
                 <Switch location={location}>
                   <Route exact path="/" component={Home}/>

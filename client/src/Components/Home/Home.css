@@ -1,13 +1,15 @@
+body, html {
+	height: 100%;
+}
 .body-main{
 	margin: 0px;
 	padding: 0px;
-	background-color: #20DECEFF;
 	height: 100%;
 	width: 100%;
 	display: inline-block;
 }
 .Title-container{
-	background-color: #BFD7EA;
+	background-color: #adc2f6;
 	width: 100%;
 	height: 30vh;
 	text-align: center;
@@ -30,7 +32,7 @@
 }
 
 
-.tabs a:active,.tabs a:hover{
+.tabs:active,.tabs:hover{
 	color: #fa923f;
 }
 
@@ -42,7 +44,7 @@
 	width: 100%;
 }
 
-.tabs-container a:active,.tabs-container a:hover{
+.tabs-container:active,.tabs-container:hover{
 	color: #fa923f;
 }
 
@@ -65,7 +67,7 @@
 }
 
 .card_holder {
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -73,5 +75,5 @@
 
 .card-holder-style{
 	
-	background-color: #8B80F9  ;
+	background-color: white  ;
 }
