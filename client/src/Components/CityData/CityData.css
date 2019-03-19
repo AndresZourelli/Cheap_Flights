@@ -1,13 +1,20 @@
-.Title{
+.Title-Container{
     height: 30vh;
     width: 100%;
     background-color: #b0c4de;
+}
+
+.Title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 body {
     background-color: #b3b0de;
 }
 .CardContainer {
-    margin-top: 1%; 
+     
     background-color: #b3b0de;
     display: flex;
     width: 100%;
@@ -17,15 +24,19 @@ body {
     justify-content: space-evenly;
 }
 .ticket {
+    margin-top: 5%;
     flex: 1 1 25%;
-    border: 2px black solid;
     flex-wrap: wrap;
     overflow: hidden;
     box-shadow: 5px 3px 15px rgba(98, 95, 95, 0.589);
-    margin-top: 10px;
     position: relative;
     height: 400px;
     width: 450px;
+    transition: all .5s;
+}
+
+.ticket:hover {
+    box-shadow: 2px 6px 30px rgba(0, 0, 0, 0.4);
 }
 
 h2 {
@@ -65,7 +76,7 @@ h2 {
 }
 
 .Title_Date {
-    height: 100%;
+    height: 40%;
     background-color: white;
     padding: 5%;
     text-align: left;

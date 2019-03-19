@@ -38,8 +38,19 @@ export const specificCity = (cityName) => dispatch => {
 			cityName: cityName
 		}
 	})
-	.then(cities => dispatch({
-		type: SPECIFIC_CITY,
-		payload: cities.data
-	})).then(console.log('Success City Added'))
+	.then(cities =>{
+	if(cities.data.payload.length > 0){
+		dispatch({
+			type: SPECIFIC_CITY,
+			payload: cities.data
+		})
+	}else{
+		dispatch({
+			type: SPECIFIC_CITY,
+			payload: []
+		})
+	}
+
+	
+	}).then(console.log('Success City Added'))
 }
