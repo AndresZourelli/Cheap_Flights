@@ -1,4 +1,4 @@
-import { FETCH_CITIES, NEW_FLIGHT, SPECIFIC_CITY } from './types';
+import { FETCH_CITIES, NEW_FLIGHT, SPECIFIC_CITY, CLEAR_CITY } from './types';
 import axios from 'axios';
 
 export const fetchCities = (value) => dispatch => {
@@ -53,4 +53,12 @@ export const specificCity = (cityName) => dispatch => {
 
 	
 	}).then(console.log('Success City Added'))
+}
+
+export const clearCity = () => dispatch => {
+	dispatch({
+		type: CLEAR_CITY,
+		payload: []
+	})
+	
 }

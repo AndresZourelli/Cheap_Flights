@@ -1,4 +1,4 @@
-import { FETCH_CITIES, NEW_FLIGHT, SPECIFIC_CITY } from '../actions/types';
+import { FETCH_CITIES, NEW_FLIGHT, SPECIFIC_CITY, CLEAR_CITY } from '../actions/types';
 
 const initialState = {
 	cities: [],
@@ -27,7 +27,13 @@ export default function(state = initialState, action){
 			return {
 				...state,
 				cities: action.payload
-			}	
+			}
+		case CLEAR_CITY:
+		console.log('Specific reducing')
+		return {
+			...state,
+			cities: []
+		}		
 		default:
 			return state;
 	}

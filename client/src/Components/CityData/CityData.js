@@ -1,12 +1,16 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
-import { specificCity } from '../../actions/cityAction.js';
+import { specificCity, clearCity } from '../../actions/cityAction.js';
 import { withRouter } from 'react-router-dom';
 import './CityData.css';
 import Navigation from '../Navigation/Navigation';
 class CityPage extends Component {
 	componentDidMount(){
 		this.props.GetSpecificCity(this.props.match.params.id);
+		window.scrollTo(0,0);
+	}
+	componentWillUnmount(){
+		this.props.ClearCity()
 	}
 	render(){
 		const flights = (this.props.citys.payload || []).map((flight) => (
@@ -104,7 +108,11 @@ const mapDispatchToProps = (dispatch) => {
 	return{
 		GetSpecificCity: (cityName) =>{
 			dispatch(specificCity(cityName))
+		},
+		ClearCity: ()=>{
+			dispatch(clearCity())
 		}
+
 	}
 }
 export default withRouter(connect(mapStateToProps, mapDispatchToProps )(CityPage));

@@ -7,9 +7,6 @@ import {Link} from 'react-router-dom';
 const Info_Card = ({ history, CityData, expanded = false, showActions = false, goBack = null, ...rest }) => {
   const link = `/location/${CityData.cityname}`
   return (
-    
-    
-    <div className="card_container" key={CityData.cityname} onClick={rest.onClick}>
       <Link className='link-style' to={link}>
         <img className="image_destination" src={CityData.cityimage} alt={CityData.cityname}/>
         <div className="text_container">
@@ -17,9 +14,6 @@ const Info_Card = ({ history, CityData, expanded = false, showActions = false, g
           <p>Click for More Details</p>
         </div>
       </Link>
-    </div>
-    
-
     )
 }
 

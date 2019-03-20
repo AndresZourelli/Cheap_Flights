@@ -13,8 +13,7 @@ body, html {
 	width: 100%;
 	height: 30vh;
 	text-align: center;
-
-	display: inline-block;
+	display: block;
 	}
 
 .title-text{
@@ -67,13 +66,20 @@ body, html {
 }
 
 .card_holder {
+	position: relative;
+	max-width: 1920px;
+	margin: auto;
 	height: 100%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-left: auto;
 }
 
 .card-holder-style{
 	
 	background-color: white  ;
 }
+

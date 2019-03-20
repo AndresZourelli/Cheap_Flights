@@ -1,22 +1,16 @@
-.holder{
-	flex: 1 0 33%;
-
-	padding-left: 20px;
-	padding-right: 20px;
-}
-.card_container {
+.holder {
+	flex: 0 0 25%;
 	font-family: 'Nunito', sans-serif; 
 	height: 550px; 
-	width: 500px;
+	width: 100%;
 	background-color: white;
 	box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.2);
 	transition: all .3s ease;
   	position: relative;
-  	margin: auto;
-	margin-top: 45px;
+	margin: 0 auto;
+	min-width: 400px;
 }
-.card_container:hover {
-	box-shadow: 2px 6px 30px rgba(0, 0, 0, 0.4);
+.holder:hover {
 	background-color: #66062c;
 	color: white;
 	
@@ -26,6 +20,7 @@
 }
 .link-style:hover, .link-style:active  {
 	text-decoration: none;
+	color: white;
 	
 	
 }
