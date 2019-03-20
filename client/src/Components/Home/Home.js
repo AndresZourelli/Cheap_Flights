@@ -29,6 +29,7 @@ class Home extends Component {
 			<div className="full-height">
 				<div className="Title-container">
 					<Navigation onScroll={this.scrollToMyRef} />
+					<div className="Home-title-image" />
 				</div>
 				<div className="card_holder card-holder-style">{infer}</div>
 				<div ref={this.myRef} id="about" />

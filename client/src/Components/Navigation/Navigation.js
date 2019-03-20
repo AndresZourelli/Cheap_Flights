@@ -6,15 +6,19 @@ const Navigation = (props) => {
 		<nav className="nav-style">
 			<ul>
 				<li>
-					<Link to="/">Home</Link>
-				</li>
-				<li>
-					<Link to="" onClick={props.onScroll}>
-						About
+					<Link to="/">
+						<strong>Home</strong>
 					</Link>
 				</li>
 				<li>
-					<Link to="/">Contact</Link>
+					<Link to="" onClick={props.onScroll}>
+						<strong>About</strong>
+					</Link>
+				</li>
+				<li>
+					<Link to="/">
+						<strong>Contact</strong>
+					</Link>
 				</li>
 			</ul>
 		</nav>

@@ -14,9 +14,10 @@ html {
 .Title-container {
 	background-color: #adc2f6;
 	width: 100%;
-	height: 30vh;
+	height: 1000px;
 	text-align: center;
 	display: block;
+
 }
 
 .title-text {
@@ -86,4 +87,15 @@ html {
 .card-holder-style {
 
 	background-color: white;
+}
+
+.Home-title-image {
+	margin: auto;
+	max-width: 1920px;
+	height: 100%;
+	background-image: url('./../../images/action-adventure-blur-386009\ \(2\).jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
 }
