@@ -12,32 +12,38 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const db = knex({
-  client: 'pg',
-  connection: {
-  user: process.env.DB_User,
-  host: process.env.DB_host,
-  database: process.env.DB,
-  password: process.env.DB_password,
-  port: process.env.DB_Port,
-  ssl:true,
-debug: true},
+	client: 'pg',
+	connection: {
+		user: process.env.DB_User,
+		host: process.env.DB_host,
+		database: process.env.DB,
+		password: process.env.DB_password,
+		port: process.env.DB_Port,
+		ssl: true,
+		debug: true
+	}
 });
 
-app.listen(5000,()=> console.log('Listening on port 5000'))
+app.listen(5000, () => console.log('Listening on port 5000'));
 
-app.post('/NewFlights',data =>{
+app.post('/NewFlights', (data) => {
 	console.log(data.body);
-	db.schema.hasTable('boston').then(res=>console.log(res))
-  })
-	
-app.get('/getCities', (req,res,next) =>{
-  db.select('*').table('city_names').then(ress=> { res.json({payload: ress})})
-})
+	db.schema.hasTable('boston').then((res) => console.log(res));
+});
 
-app.post('/fetchCity', (req,res,next) =>{
+app.get('/getCities', (req, res, next) => {
+	db.select('*').table('city_names').then((ress) => {
+		res.json({ payload: ress });
+	});
+});
 
-  db('Cities').where({
-    departingcity: `${req.body.cityName}`
-  }).then(ress=> { res.json({payload: ress}) }  ).catch()
-
-})
+app.post('/fetchCity', (req, res, next) => {
+	db('Cities')
+		.where({
+			departingcity: `${req.body.cityName}`
+		})
+		.then((ress) => {
+			res.json({ payload: ress });
+		})
+		.catch();
+});

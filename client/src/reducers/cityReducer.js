@@ -3,37 +3,37 @@ import { FETCH_CITIES, NEW_FLIGHT, SPECIFIC_CITY, CLEAR_CITY } from '../actions/
 const initialState = {
 	cities: [],
 	flight: {},
-	query:[],
-	availableCities:[]
+	query: [],
+	availableCities: []
 };
 
-export default function(state = initialState, action){
-	switch(action.type) {
+export default function(state = initialState, action) {
+	switch (action.type) {
 		case FETCH_CITIES:
-			console.log('Fetch reducing')
+			console.log('Fetch reducing');
 			return {
 				...state,
-				availableCities: action.payload,
+				availableCities: action.payload
 			};
 
 		case NEW_FLIGHT:
-			console.log('New reducing')
+			console.log('New reducing');
 			return {
 				...state,
 				flight: action.payload
-			}
+			};
 		case SPECIFIC_CITY:
-			console.log('Specific reducing')
+			console.log('Specific reducing');
 			return {
 				...state,
 				cities: action.payload
-			}
+			};
 		case CLEAR_CITY:
-		console.log('Specific reducing')
-		return {
-			...state,
-			cities: []
-		}		
+			console.log('Specific reducing');
+			return {
+				...state,
+				cities: []
+			};
 		default:
 			return state;
 	}

@@ -1,37 +1,43 @@
 .holder {
 	flex: 0 0 25%;
-	font-family: 'Nunito', sans-serif; 
-	height: 550px; 
+	font-family: 'Nunito', sans-serif;
+	height: 550px;
 	width: 100%;
 	background-color: white;
 	box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.2);
 	transition: all .3s ease;
-  	position: relative;
+	position: relative;
 	margin: 0 auto;
 	min-width: 400px;
 }
+
 .holder:hover {
 	background-color: #66062c;
 	color: white;
-	
+
 }
-.link-style{
+
+.link-style {
 	color: black;
 }
-.link-style:hover, .link-style:active  {
+
+.link-style:hover,
+.link-style:active {
 	text-decoration: none;
 	color: white;
-	
-	
+
+
 }
+
 .image_destination {
 	height: 80%;
-	width:100%;
+	width: 100%;
 	background-size: cover;
 	background-position: right center;
 }
-.text_container{
-	
+
+.text_container {
+
 	position: relative;
 	height: 20%;
 	width: 100%;
@@ -40,7 +46,7 @@
 }
 
 .card_container h1 {
-	margin:0;
+	margin: 0;
 }
 
 .card_container p {
@@ -49,9 +55,7 @@
 
 .subtitle {
 	font-weight: 700;
-	margin:0 0 15px;
+	margin: 0 0 15px;
 	font-size: 1.25rem;
 	color: #E76C67;
 }
-
-
