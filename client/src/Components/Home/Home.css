@@ -77,14 +77,16 @@ html {
 	max-width: 1920px;
 	margin: auto;
 	height: 100%;
-	display: flex;
+	display: grid;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: flex-start;
-	justify-content: space-between;
+	justify-content: center;
 	margin-left: auto;
 	padding: 0 72px;
 	margin-bottom: 50px;
+	grid-template-columns: 450px 450px 450px 450px;
+	grid-column-gap: 0;
 }
 
 .card-holder-style {
