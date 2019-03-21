@@ -43,7 +43,12 @@ class Home extends Component {
 						<h1>
 							<strong>Why</strong> Choose Us?
 						</h1>
-						<p />
+						<br />
+						<p>Here at Cheap Flights we do the heavy lifting for you!</p>
+						<p>
+							We manually search for the best deals on flights and share them with you in one easy to
+							search place.
+						</p>
 					</div>
 				</div>
 			</div>

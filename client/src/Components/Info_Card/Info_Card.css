@@ -1,7 +1,7 @@
 .holder {
 	flex: 0 0 25%;
 	font-family: 'Nunito', sans-serif;
-	height: 550px;
+	height: 450px;
 	width: 100%;
 	background-color: white;
 	/* box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.2); */
@@ -31,7 +31,7 @@
 }
 
 .image_destination {
-	height: 80%;
+	height: 70%;
 	width: 100%;
 	background-size: cover;
 	background-position: right center;
@@ -40,7 +40,7 @@
 .text_container {
 
 	position: relative;
-	height: 20%;
+	height: 30%;
 	width: 100%;
 	text-align: left;
 	padding: 3% 3% 5% 3%;
