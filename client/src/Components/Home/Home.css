@@ -85,7 +85,7 @@ html {
 	margin-left: auto;
 	padding: 0 72px;
 	margin-bottom: 50px;
-	grid-template-columns: 450px 450px 450px 450px;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
 	grid-column-gap: 0;
 }
 
