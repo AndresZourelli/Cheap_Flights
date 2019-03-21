@@ -72,8 +72,12 @@ class CityPage extends Component {
 					<Navigation />
 				</div>
 
-				<div className="Title-Container Title">
-					<h1>Flights from {cityName}</h1>
+				<div className="Title-Container">
+					<div className="Title">
+						<h1>
+							Leaving <strong>{cityName}</strong> <br /> &ensp; &ensp; &ensp; &ensp; &ensp;and going to...
+						</h1>
+					</div>
 				</div>
 				<div className="Container">
 					{red === undefined && (
