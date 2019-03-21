@@ -29,10 +29,23 @@ class Home extends Component {
 			<div className="full-height">
 				<div className="Title-container">
 					<Navigation onScroll={this.scrollToMyRef} />
-					<div className="Home-title-image" />
+					{/* <div className="Home-title-image" /> */}
+				</div>
+				<div className="home-question-container">
+					<h2>
+						<strong>Where are you traveling from?</strong>
+					</h2>
+					<p>Find your next trip here </p>
 				</div>
 				<div className="card_holder card-holder-style">{infer}</div>
-				<div ref={this.myRef} id="about" />
+				<div ref={this.myRef} id="about" className="home-about">
+					<div className="home-about-container">
+						<h1>
+							<strong>Why</strong> Choose Us?
+						</h1>
+						<p />
+					</div>
+				</div>
 			</div>
 		);
 	}

@@ -1,24 +1,24 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import './Navigation.css';
 const Navigation = (props) => {
 	return (
 		<nav className="nav-style">
 			<ul>
 				<li>
-					<Link to="/">
+					<NavLink to="/" activeClassName="nav-active">
 						<strong>Home</strong>
-					</Link>
+					</NavLink>
 				</li>
 				<li>
-					<Link to="" onClick={props.onScroll}>
+					<NavLink to="" onClick={props.onScroll} activeClassName="nav-active">
 						<strong>About</strong>
-					</Link>
+					</NavLink>
 				</li>
 				<li>
-					<Link to="/">
+					<NavLink to="/Contact" activeClassName="nav-active">
 						<strong>Contact</strong>
-					</Link>
+					</NavLink>
 				</li>
 			</ul>
 		</nav>

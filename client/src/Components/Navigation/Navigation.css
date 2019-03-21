@@ -1,24 +1,35 @@
 .nav-style {
+	display: block;
 	width: 100%;
 	max-width: 1920px;
-	position: absolute;
+	position: relative;
 	justify-content: center;
 	font-size: 18pt;
 	margin: auto;
-	left: 50%;
-	transform: translateX(-50%);
+	padding-left: 20px;
+
+}
+
+.nav-style:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
 }
 
 .nav-style ul {
+	display: block;
 	list-style-type: none;
 	margin: 0;
-	padding: 20px;
+	padding: 20px 20px 20px 0;
 	float: left;
 }
 
 .nav-style li {
 	display: inline;
-	padding: 20px;
+	padding: 20px 20px 20px 0;
 
 }
 
@@ -28,5 +39,9 @@
 
 a:active,
 a:hover {
-	color: #fa923f;
+	color: #66062c;
+}
+
+.nav-active {
+	color: none;
 }

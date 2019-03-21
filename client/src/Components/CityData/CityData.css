@@ -1,19 +1,29 @@
+.nav-container {
+    background-color: #adc2f6;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: block;
+}
 
-.Title-Container{
+.Title-Container {
     height: 30vh;
     width: 100%;
     background-color: #83aee6;
 }
 
-.Title{
+.Title {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 body {
     background-color: white;
 }
+
 .CardContainer {
+    max-width: 1920px;
     background-color: #b3b0de;
     display: flex;
     width: 100%;
@@ -21,7 +31,9 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    margin: auto;
 }
+
 .ticket {
     margin-top: 5%;
     margin-bottom: 5%;
@@ -51,11 +63,11 @@ h2 {
     position: absolute;
     transform: translateY(500px);
     width: 100%;
-    height: 100%;  
+    height: 100%;
     color: white;
 }
 
-.image-container{
+.image-container {
     position: relative;
     height: 60%;
     width: 100%;
@@ -65,7 +77,7 @@ h2 {
 .image-container img {
     position: relative;
     max-width: 100%;
-    
+
 }
 
 .image-container:hover .shadowbox {
@@ -83,7 +95,7 @@ h2 {
     position: relative;
 }
 
-.price-container{
+.price-container {
     text-align: center;
     padding: .6% 0;
     position: absolute;
@@ -93,7 +105,8 @@ h2 {
     opacity: .9;
     width: 100%;
 }
-.price-container h2{
+
+.price-container h2 {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -103,14 +116,16 @@ h2 {
     padding-right: 2%;
     text-align: right;
 }
+
 .CityData-body {
-    height:100%;
+    height: 100%;
+    width: 100%;
 }
 
 .CityData-footer {
     display: flex;
     flex-flow: column;
-    height:auto;
+    height: auto;
     background-color: rebeccapurple;
     width: 100%;
 }
@@ -124,6 +139,7 @@ h2 {
     min-height: 100%;
     max-height: auto;
 }
+
 /* @media screen and (min-width: 1920px) {
     .Container {
       height: 100%;

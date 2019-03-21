@@ -68,7 +68,10 @@ class CityPage extends Component {
 		console.log(red);
 		return (
 			<div className="CityData-body">
-				<Navigation />
+				<div className="nav-container">
+					<Navigation />
+				</div>
+
 				<div className="Title-Container Title">
 					<h1>Flights from {cityName}</h1>
 				</div>
