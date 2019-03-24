@@ -186,6 +186,16 @@ h2 {
     margin-top: 10px;
 }
 
+.airplane {
+    transform: translateY(-8px);
+}
+
+.website-link,
+.website-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 @media screen and (max-width: 450px) {
     .CardContainer {
         padding: 10px;
