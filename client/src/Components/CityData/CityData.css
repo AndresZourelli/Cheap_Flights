@@ -176,6 +176,12 @@ h2 {
     transform: translateY(-13px)
 }
 
+.CityData-back-airport-flight-travel-info {
+    display: inline-block;
+    font-size: 12pt;
+    margin: 0 5px 0px 5px;
+}
+
 .CityData-flight-travel-info-parent {
     margin-top: 10px;
 }

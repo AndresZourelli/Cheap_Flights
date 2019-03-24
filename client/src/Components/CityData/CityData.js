@@ -32,13 +32,20 @@ class CityPage extends Component {
 								<i class="fas fa-plane-departure fa-lg" />{' '}
 								<h4 className="flight-travel-info">
 									<strong>
-										{flight.departingairportname}
+										<div className="CityData-back-airport-flight-travel-info">
+											<div>8:40pm</div>
+											{flight.departingairportname}
+										</div>
+
 										<div className="CityData-back-text-line-flight-travel-info">
 											{flight.flightdurationdeparting}
 
 											<div className="CityData-back-text-line" />
 										</div>
-										{flight.arrivingairportname}
+										<div className="CityData-back-airport-flight-travel-info">
+											<div>8:40pm</div>
+											{flight.arrivingairportname}
+										</div>
 									</strong>
 								</h4>
 							</div>
@@ -46,13 +53,18 @@ class CityPage extends Component {
 								<i class="fas fa-plane-arrival fa-lg" />{' '}
 								<h4 className="flight-travel-info">
 									<strong>
-										{flight.arrivingairportname}
+										<div className="CityData-back-airport-flight-travel-info">
+											<div>7:40pm</div>
+											{flight.arrivingairportname}
+										</div>
 										<div className="CityData-back-text-line-flight-travel-info">
 											{flight.flightdurationarriving}
-
 											<div className="CityData-back-text-line" />
 										</div>
-										{flight.departingairportname}
+										<div className="CityData-back-airport-flight-travel-info">
+											<div>8:40pm</div>
+											{flight.departingairportname}
+										</div>
 									</strong>
 								</h4>
 							</div>
