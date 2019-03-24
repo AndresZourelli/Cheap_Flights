@@ -6,7 +6,7 @@ const Navigation = (props) => {
 		<nav className="nav-style">
 			<ul>
 				<li>
-					<i class="fas fa-paper-plane fa-lg" />
+					<i className="fas fa-paper-plane fa-lg" />
 				</li>
 				<li>
 					<NavLink to="/" activeClassName="nav-active">

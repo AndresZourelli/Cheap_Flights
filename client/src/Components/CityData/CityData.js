@@ -14,6 +14,7 @@ class CityPage extends Component {
 	}
 
 	render() {
+		const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ];
 		const flights = (this.props.citys.payload || []).map((flight) => (
 			<div key={flight.id} className="CityData-items">
 				<div className="ticket">
@@ -27,12 +28,34 @@ class CityPage extends Component {
 					<div className="image-container">
 						<img src={flight.mainimageurl} alt="" />
 						<div className="shadowbox">
-							<h4>
-								<strong>Arrival Flight Duration:</strong> {flight.flightdurationarriving}
-							</h4>
-							<h4>
-								<strong>Departing Flight Duration:</strong> {flight.flightdurationdeparting}
-							</h4>
+							<div className="CityData-flight-travel-info-parent">
+								<i class="fas fa-plane-departure fa-lg" />{' '}
+								<h4 className="flight-travel-info">
+									<strong>
+										{flight.departingairportname}
+										<div className="CityData-back-text-line-flight-travel-info">
+											{flight.flightdurationdeparting}
+
+											<div className="CityData-back-text-line" />
+										</div>
+										{flight.arrivingairportname}
+									</strong>
+								</h4>
+							</div>
+							<div className="CityData-flight-travel-info-parent">
+								<i class="fas fa-plane-arrival fa-lg" />{' '}
+								<h4 className="flight-travel-info">
+									<strong>
+										{flight.arrivingairportname}
+										<div className="CityData-back-text-line-flight-travel-info">
+											{flight.flightdurationarriving}
+
+											<div className="CityData-back-text-line" />
+										</div>
+										{flight.departingairportname}
+									</strong>
+								</h4>
+							</div>
 							<h4>
 								<strong>Website:</strong> {flight.websiteurl}
 							</h4>
@@ -46,13 +69,35 @@ class CityPage extends Component {
 							&ensp;
 							<strong> {flight.arrivingcity}</strong>
 						</h2>
-						<br />
-						<h4>
-							&emsp; &emsp;
-							<strong>{flight.arrivingdate}</strong>
-							<strong>-</strong>
-							<strong>{flight.departingdate}</strong>
-						</h4>
+						<h5>
+							<span className="CityData-text-subtext">
+								<i class="fas fa-calendar" />
+								<strong>
+									{' '}
+									{months[new Date(flight.arrivingdate).getMonth()] +
+										' ' +
+										new Date(flight.arrivingdate).getDay() +
+										' ' +
+										new Date(flight.arrivingdate).getFullYear()}
+								</strong>
+								<strong> &ndash; </strong>
+								<strong>
+									{months[new Date(flight.departingdate).getMonth()] +
+										' ' +
+										new Date(flight.departingdate).getDay() +
+										' ' +
+										new Date(flight.departingdate).getFullYear()}
+								</strong>
+							</span>
+							<br />
+							<span className="CityData-text-subtext">
+								<i className="fas fa-bed" />
+								<strong> Days: </strong>
+								<strong>
+									{(new Date(flight.departingdate) - new Date(flight.arrivingdate)) / 86400 / 1000}
+								</strong>
+							</span>
+						</h5>
 					</div>
 				</div>
 			</div>
