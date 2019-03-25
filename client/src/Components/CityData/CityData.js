@@ -25,13 +25,11 @@ class CityPage extends Component {
 		}
 
 		const red = this.props.citys.payload;
-		console.log(red);
 		return (
 			<div className="CityData-body">
 				<div className="nav-container">
 					<Navigation />
 				</div>
-
 				<div className="Title-Container">
 					<div className="Title">
 						<h1>

@@ -16,11 +16,8 @@ class Home extends Component {
 			behavior: 'smooth'
 		});
 
-	onPageLoad = () => {
-		console.log('hi');
-	};
 	render() {
-		const infer = (this.props.citys.payload || []).map((data, k) => (
+		const infer = (this.props.citys || []).map((data, k) => (
 			<div key={k} className="holder">
 				<InfoCard CityData={data} key={data} {...this.props} />
 			</div>
@@ -29,7 +26,6 @@ class Home extends Component {
 			<div className="full-height">
 				<div className="Title-container">
 					<Navigation onScroll={this.scrollToMyRef} />
-					{/* <div className="Home-title-image" /> */}
 				</div>
 				<div className="home-question-container">
 					<h2>

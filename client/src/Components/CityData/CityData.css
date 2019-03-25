@@ -173,12 +173,12 @@ h2 {
     width: 30%;
     font-size: 12pt;
     margin: 0 5px 0px 5px;
-    transform: translateY(-13px)
+    transform: translateY(-20%);
 }
 
 .CityData-back-airport-flight-travel-info {
     display: inline-block;
-    font-size: 12pt;
+    font-size: 18pt;
     margin: 0 5px 0px 5px;
 }
 
@@ -194,6 +194,16 @@ h2 {
 .website-link:hover {
     text-decoration: none;
     color: inherit;
+}
+
+.dateAdded {
+    float: right;
+    opacity: .5;
+}
+
+.shadowbox-text {
+    transform: translateY(30%);
+
 }
 
 @media screen and (max-width: 450px) {

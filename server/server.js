@@ -26,9 +26,9 @@ const db = knex({
 
 app.listen(5000, () => console.log('Listening on port 5000'));
 
-app.post('/NewFlights', (data) => {
-	console.log(data.body);
-	db.schema.hasTable('boston').then((res) => console.log(res));
+app.post('/NewFlights', (data, res) => {
+	console.log(data.body.flightData);
+	db('Cities').insert(data.body.flightData).then((ress) => res.json({ payload: 'success' }));
 });
 
 app.get('/getCities', (req, res, next) => {
@@ -46,4 +46,10 @@ app.post('/fetchCity', (req, res, next) => {
 			res.json({ payload: ress });
 		})
 		.catch();
+});
+
+app.get('/availableCities', (req, res) => {
+	db('city_names').select('*').then((ress) => {
+		res.json({ payload: ress });
+	});
 });
