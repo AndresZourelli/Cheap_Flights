@@ -12,7 +12,7 @@
 .InputElement:focus {
 	outline: none;
 	background-color: #ccc;
-	
+
 }
 
 .Input {
@@ -26,4 +26,9 @@
 	display: block;
 	margin-bottom: 8px;
 
+}
+
+.Invalid {
+	border: 1px solid red;
+	background-color: rgb(236, 109, 109);
 }

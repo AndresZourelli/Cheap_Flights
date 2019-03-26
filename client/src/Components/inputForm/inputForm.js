@@ -2,14 +2,17 @@ import React from 'react';
 import './InputForm.css';
 const InputForm = (props) => {
 	let inputElement = null;
-
+	const inputClasses = [ 'InputElement' ];
+	if (props.invalid && props.shouldValidate && props.touched) {
+		inputClasses.push('Invalid');
+	}
 	switch (props.elementType) {
 		case 'input':
 			inputElement = (
 				<div>
 					<h4 className="text-align">{props.TitleText}</h4>{' '}
 					<input
-						className="InputElement"
+						className={inputClasses.join(' ')}
 						{...props.elementConfig}
 						value={props.value}
 						onChange={props.changed}
@@ -22,7 +25,7 @@ const InputForm = (props) => {
 				<div>
 					<h4 className="text-align">{props.TitleText}</h4>
 					<textarea
-						className="InputElement"
+						className={inputClasses.join(' ')}
 						{...props.elementConfig}
 						value={props.value}
 						onChange={props.changed}
@@ -34,7 +37,7 @@ const InputForm = (props) => {
 			inputElement = (
 				<div>
 					<h4 className="text-align">{props.TitleText}</h4>
-					<select className="InputElement" value={props.value} onChange={props.changed}>
+					<select className={inputClasses.join(' ')} value={props.value} onChange={props.changed}>
 						{props.elementConfig.options.map((option) => (
 							<option key={option.value} value={option.value}>
 								{option.displayValue}
@@ -57,7 +60,7 @@ const InputForm = (props) => {
 				<div>
 					<h4 className="text-align">{props.TitleText}</h4>
 					<input
-						className="InputElement"
+						className={inputClasses.join(' ')}
 						{...props.elementConfig}
 						value={props.value}
 						onChange={props.changed}

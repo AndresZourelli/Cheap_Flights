@@ -23,7 +23,12 @@ class ControlPanel extends Component {
 						{ value: 'Boston', displayValue: 'Boston' }
 					]
 				},
-				value: ''
+				validation: {
+					required: true
+				},
+				value: '',
+				valid: true,
+				touched: false
 			},
 			departingairportname: {
 				TitleText: 'What is the Departing Airport Name Code?',
@@ -32,7 +37,12 @@ class ControlPanel extends Component {
 					type: 'text',
 					placeholder: 'Airport Name Code'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 			destination: {
 				TitleText: "What is the trip's destination?",
@@ -41,7 +51,12 @@ class ControlPanel extends Component {
 					type: 'text',
 					placeholder: 'City Name'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 			arrivingairportname: {
 				TitleText: 'What is the destination airport name code?',
@@ -50,7 +65,12 @@ class ControlPanel extends Component {
 					type: 'text',
 					placeholder: 'Airport Name Code'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 			departingdatetakeoff: {
 				TitleText: 'What time does it take off at?',
@@ -59,7 +79,12 @@ class ControlPanel extends Component {
 					type: 'datetime-local',
 					placeholder: 'Enter Date and Time'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 			departingdatelanding: {
 				TitleText: 'What time does it land at?',
@@ -68,7 +93,12 @@ class ControlPanel extends Component {
 					type: 'datetime-local',
 					placeholder: 'Enter Date and Time'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 			departingflightstops: {
 				TitleText: 'How many stops does this flight make?',
@@ -77,7 +107,12 @@ class ControlPanel extends Component {
 					type: 'text',
 					placeholder: 'Number of stops'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 			Returningtitle: {
 				TitleText: 'Returning Flight Information',
@@ -90,7 +125,12 @@ class ControlPanel extends Component {
 					type: 'datetime-local',
 					placeholder: 'Enter Date and Time'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 			arrivingdatelanding: {
 				TitleText: 'What time does it Land at?',
@@ -99,7 +139,12 @@ class ControlPanel extends Component {
 					type: 'datetime-local',
 					placeholder: 'Enter Date and Time'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 
 			arrivingflightstops: {
@@ -109,7 +154,12 @@ class ControlPanel extends Component {
 					type: 'text',
 					placeholder: 'Number of stops'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 			general: {
 				TitleText: 'General Information',
@@ -122,7 +172,12 @@ class ControlPanel extends Component {
 					type: 'number',
 					placeholder: 'Enter Flight Cost'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			},
 
 			websiteurl: {
@@ -132,9 +187,15 @@ class ControlPanel extends Component {
 					type: 'url',
 					placeholder: 'Enter Website URL'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				},
+				valid: false,
+				touched: false
 			}
 		},
+		formIsValid: false,
 		loading: false
 	};
 
@@ -166,9 +227,26 @@ class ControlPanel extends Component {
 			...updatedNewFlightsForm[inputIdentifier]
 		};
 		updatedFormElement.value = event.target.value;
+		updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
+		updatedFormElement.touched = true;
 		updatedNewFlightsForm[inputIdentifier] = updatedFormElement;
-		this.setState({ newFlightForm: updatedNewFlightsForm });
+		let formIsValid = true;
+		for (let inputIdentifier in updatedNewFlightsForm) {
+			formIsValid = updatedNewFlightsForm[inputIdentifier].valid && formIsValid;
+		}
+		this.setState({ newFlightForm: updatedNewFlightsForm, formIsValid: formIsValid });
 	};
+
+	checkValidity(value, rules) {
+		let isValid = true;
+		if (rules.required) {
+			isValid = value.trim() !== '' && isValid;
+		}
+		if (value !== 'Select Departing City') {
+			isValid = value !== 'select_city' && isValid;
+		}
+		return isValid;
+	}
 	render() {
 		const formElementsArray = [];
 		for (let key in this.state.newFlightForm) {
@@ -186,14 +264,16 @@ class ControlPanel extends Component {
 						elementType={formElement.config.elementType}
 						elementConfig={formElement.config.elementConfig}
 						value={formElement.config.value}
+						invalid={!formElement.config.valid}
+						touched={formElement.config.touched}
+						shouldValidate={formElement.config.validation}
 						TitleText={formElement.config.TitleText}
 						changed={(event) => this.inputChangedHandler(event, formElement.id)}
 					/>
 				))}
-				<button>SUBMIT</button>
+				<button disabled={!this.state.formIsValid}>SUBMIT</button>
 			</form>
 		);
-
 		return (
 			<div className="ControlPanel">
 				<h1>Enter New Flight Information</h1>
