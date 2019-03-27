@@ -9,17 +9,17 @@ const Navigation = (props) => {
 					<i className="fas fa-paper-plane fa-lg" />
 				</li>
 				<li>
-					<NavLink to="/" activeClassName="nav-active">
+					<NavLink to="/" className="nav-inactive" activeClassName="nav-active">
 						<strong>Home</strong>
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="" onClick={props.onScroll} activeClassName="nav-active">
+					<NavLink to="" onClick={props.onScroll} className="nav-inactive" activeClassName="nav-active">
 						<strong>About</strong>
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/Contact" activeClassName="nav-active">
+					<NavLink to="/ContactForm" className="nav-inactive" activeClassName="nav-active">
 						<strong>Contact</strong>
 					</NavLink>
 				</li>
