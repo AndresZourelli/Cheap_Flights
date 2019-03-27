@@ -3,6 +3,7 @@ import InputForm from '../inputForm/inputForm';
 import './controlPanel.css';
 import { connect } from 'react-redux';
 import { newFlight } from '../../actions/cityAction';
+import { Redirect } from 'react-router-dom';
 
 class ControlPanel extends Component {
 	state = {
@@ -80,7 +81,7 @@ class ControlPanel extends Component {
 					type: 'datetime-local',
 					placeholder: 'Enter Date and Time'
 				},
-				value: '',
+				value: toDateTimeLocal(new Date()),
 				validation: {
 					required: true
 				},
@@ -94,7 +95,7 @@ class ControlPanel extends Component {
 					type: 'datetime-local',
 					placeholder: 'Enter Date and Time'
 				},
-				value: '',
+				value: toDateTimeLocal(new Date()),
 				validation: {
 					required: true
 				},
@@ -127,7 +128,7 @@ class ControlPanel extends Component {
 					type: 'datetime-local',
 					placeholder: 'Enter Date and Time'
 				},
-				value: '',
+				value: toDateTimeLocal(new Date()),
 				validation: {
 					required: true
 				},
@@ -141,7 +142,7 @@ class ControlPanel extends Component {
 					type: 'datetime-local',
 					placeholder: 'Enter Date and Time'
 				},
-				value: '',
+				value: toDateTimeLocal(new Date()),
 				validation: {
 					required: true
 				},
@@ -252,6 +253,7 @@ class ControlPanel extends Component {
 		}
 		return isValid;
 	}
+
 	render() {
 		const formElementsArray = [];
 		for (let key in this.state.newFlightForm) {
@@ -260,7 +262,6 @@ class ControlPanel extends Component {
 				config: this.state.newFlightForm[key]
 			});
 		}
-
 		let form = (
 			<form onSubmit={this.uploadHandler}>
 				{formElementsArray.map((formElement) => (
@@ -279,13 +280,38 @@ class ControlPanel extends Component {
 				<button disabled={!this.state.formIsValid}>SUBMIT</button>
 			</form>
 		);
+
+		const redirect = <Redirect to="/" />;
+		// const redirect = (
+		// 	<div className="successUpload_background">
+		// 		<div className="successUpload">
+		// 			<h1>Upload Successful!</h1>
+		// 		</div>
+		// 	</div>
+		// );
 		return (
 			<div className="ControlPanel">
 				<h1>Enter New Flight Information</h1>
-				{form}
+				{this.props.citys ? redirect : form}
 			</div>
 		);
 	}
 }
+const mapStateToProps = (state) => ({
+	citys: state.citys.uploadSuccess
+});
+export default connect(mapStateToProps, { newFlight })(ControlPanel);
 
-export default connect(null, { newFlight })(ControlPanel);
+function toDateTimeLocal(date1) {
+	var date = date1,
+		ten = function(i) {
+			return (i < 10 ? '0' : '') + i;
+		},
+		YYYY = date.getFullYear(),
+		MM = ten(date.getMonth() + 1),
+		DD = ten(date.getDate()),
+		HH = ten(date.getHours()),
+		II = ten(date.getMinutes()),
+		SS = ten(date.getSeconds());
+	return YYYY + '-' + MM + '-' + DD + 'T' + HH + ':' + II + ':' + SS;
+}

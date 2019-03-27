@@ -28,3 +28,28 @@
 button {
 	margin: 10px;
 }
+
+.successUpload_background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(32, 30, 30, .60);
+	display: flex;
+	align-items: center;
+}
+
+.successUpload {
+	position: flex;
+	transform: translateY(-80%);
+	margin: auto;
+	height: 30vh;
+	width: 30vh;
+	background: white;
+
+}
+
+.successUpload h1 {
+	padding: 30px
+}

@@ -4,7 +4,8 @@ const initialState = {
 	cities: [],
 	flight: {},
 	query: [],
-	availableCities: []
+	availableCities: [],
+	uploadSuccess: false
 };
 
 export default function(state = initialState, action) {
@@ -20,7 +21,7 @@ export default function(state = initialState, action) {
 			console.log('New reducing');
 			return {
 				...state,
-				flight: action.payload
+				uploadSuccess: action.payload
 			};
 		case SPECIFIC_CITY:
 			console.log('Specific reducing');

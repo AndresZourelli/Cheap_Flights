@@ -1,4 +1,4 @@
-import { FETCH_CITIES, SPECIFIC_CITY, CLEAR_CITY } from './types';
+import { FETCH_CITIES, SPECIFIC_CITY, CLEAR_CITY, NEW_FLIGHT } from './types';
 import axios from 'axios';
 export const fetchCities = (value) => (dispatch) => {
 	axios(`http://localhost:5000/getCities`)
@@ -21,8 +21,13 @@ export const newFlight = (cityData) => (dispatch) => {
 		},
 		data: JSON.stringify(cityData)
 	})
-		.then(console.log('success newFlight'))
-		.catch(console.log('error'));
+		.then(
+			dispatch({
+				type: NEW_FLIGHT,
+				payload: true
+			})
+		)
+		.catch((err) => console.log(err));
 };
 
 export const specificCity = (cityName) => (dispatch) => {
