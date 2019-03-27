@@ -21,3 +21,12 @@
 .contact-form textarea {
     width: 400px;
 }
+
+.button--container {
+    margin: 0 auto;
+}
+
+.button-primary {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

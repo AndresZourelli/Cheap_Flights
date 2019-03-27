@@ -90,7 +90,7 @@ export default class ContactForm extends Component {
 
 					<div className="button--container">
 						<button type="submit" className="button button-primary">
-							{this.state.buttonText}
+							<i className="fas fa-paper-plane fa-lg" /> {this.state.buttonText}
 						</button>
 					</div>
 				</form>
