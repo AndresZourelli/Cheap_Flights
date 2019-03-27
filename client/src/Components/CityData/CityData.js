@@ -46,10 +46,6 @@ class CityPage extends Component {
 
 					{red !== undefined && <div className="CardContainer">{flights}</div>}
 				</div>
-
-				<div className="CityData-footer">
-					<h1>footer</h1>
-				</div>
 			</div>
 		);
 	}

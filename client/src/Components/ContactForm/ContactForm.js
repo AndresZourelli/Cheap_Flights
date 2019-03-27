@@ -45,6 +45,7 @@ export default class ContactForm extends Component {
 		return (
 			<div>
 				<Navigation />
+
 				<form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
 					<h1>Contact Form</h1>
 					<label className="message" htmlFor="message-input">
