@@ -9,7 +9,8 @@ class ControlPanel extends Component {
 		newFlightForm: {
 			Departingtitle: {
 				TitleText: 'Departing Flight Information',
-				elementType: 'solid'
+				elementType: 'solid',
+				valid: true
 			},
 			departingcity: {
 				TitleText: 'Where is this Flight Taking off From?',
@@ -116,7 +117,8 @@ class ControlPanel extends Component {
 			},
 			Returningtitle: {
 				TitleText: 'Returning Flight Information',
-				elementType: 'solid'
+				elementType: 'solid',
+				valid: true
 			},
 			arrivingdatetakeoff: {
 				TitleText: 'What time does it take off at?',
@@ -163,7 +165,8 @@ class ControlPanel extends Component {
 			},
 			general: {
 				TitleText: 'General Information',
-				elementType: 'solid'
+				elementType: 'solid',
+				valid: true
 			},
 			flightcost: {
 				TitleText: 'How much does it all cost?',
@@ -195,6 +198,7 @@ class ControlPanel extends Component {
 				touched: false
 			}
 		},
+		added: new Date(),
 		formIsValid: false,
 		loading: false
 	};
@@ -234,6 +238,7 @@ class ControlPanel extends Component {
 		for (let inputIdentifier in updatedNewFlightsForm) {
 			formIsValid = updatedNewFlightsForm[inputIdentifier].valid && formIsValid;
 		}
+
 		this.setState({ newFlightForm: updatedNewFlightsForm, formIsValid: formIsValid });
 	};
 

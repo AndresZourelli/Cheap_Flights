@@ -4,7 +4,7 @@ const app = express();
 const knex = require('knex');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+const users = require('./users');
 // enable all CORS requests
 app.use(cors());
 
