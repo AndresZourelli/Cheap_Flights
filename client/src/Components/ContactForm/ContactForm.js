@@ -24,7 +24,7 @@ export default class ContactForm extends Component {
 		};
 
 		axios
-			.post('/sendEmail', data)
+			.post('/api/sendEmail', data)
 			.then((res) => {
 				if (res.status === 200) {
 					this.setState({ sent: true }, this.resetForm());

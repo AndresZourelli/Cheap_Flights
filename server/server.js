@@ -37,18 +37,18 @@ const db = knex({
 
 app.listen(process.env.PORT || 5000, () => console.log('Listening on port 5000'));
 
-app.post('/NewFlights', (data, res) => {
+app.post('/api/NewFlights', (data, res) => {
 	console.log(data.body.flightData);
 	db('Cities').insert(data.body.flightData).then((ress) => res.json({ payload: 'success' }));
 });
 
-app.get('/getCities', (req, res, next) => {
+app.get('/api/getCities', (req, res, next) => {
 	db.select('*').table('city_names').then((ress) => {
 		res.json({ payload: ress });
 	});
 });
 
-app.post('/fetchCity', (req, res, next) => {
+app.post('/api/fetchCity', (req, res, next) => {
 	db('Cities')
 		.where({
 			departingcity: `${req.body.cityName}`
@@ -59,13 +59,13 @@ app.post('/fetchCity', (req, res, next) => {
 		.catch();
 });
 
-app.get('/availableCities', (req, res) => {
+app.get('/api/availableCities', (req, res) => {
 	db('city_names').select('*').then((ress) => {
 		res.json({ payload: ress });
 	});
 });
 
-app.post('/sendEmail', (req, res) => {
+app.post('/api/sendEmail', (req, res) => {
 	const { to, name, message } = req.body;
 	sendEmail(to, name, message, res);
 });
