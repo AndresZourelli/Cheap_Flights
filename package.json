@@ -5,7 +5,8 @@
     "client": "cd client && yarn start",
     "server": "cd server && nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "cd server && nodemon server.js"
+    "start": "cd server && nodemon server.js",
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "main": "index.js",
   "author": "Andres <azourelli@gmail.com>",
