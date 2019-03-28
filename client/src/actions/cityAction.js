@@ -1,7 +1,7 @@
 import { FETCH_CITIES, SPECIFIC_CITY, CLEAR_CITY, NEW_FLIGHT } from './types';
 import axios from 'axios';
 export const fetchCities = (value) => (dispatch) => {
-	axios(`https://aqueous-citadel-23339.herokuapp.com/getCities`).then((cities) => {
+	axios(`/getCities`).then((cities) => {
 		dispatch({
 			type: FETCH_CITIES,
 			payload: cities.data.payload
@@ -10,7 +10,7 @@ export const fetchCities = (value) => (dispatch) => {
 };
 
 export const newFlight = (cityData) => (dispatch) => {
-	axios('https://aqueous-citadel-23339.herokuapp.com/NewFlights', {
+	axios('/NewFlights', {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json'
@@ -27,7 +27,7 @@ export const newFlight = (cityData) => (dispatch) => {
 };
 
 export const specificCity = (cityName) => (dispatch) => {
-	axios(`https://aqueous-citadel-23339.herokuapp.com/fetchCity`, {
+	axios(`/fetchCity`, {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json'

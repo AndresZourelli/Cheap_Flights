@@ -24,7 +24,7 @@ export default class ContactForm extends Component {
 		};
 
 		axios
-			.post('https://aqueous-citadel-23339.herokuapp.com/sendEmail', data)
+			.post('/sendEmail', data)
 			.then((res) => {
 				if (res.status === 200) {
 					this.setState({ sent: true }, this.resetForm());
