@@ -11,17 +11,17 @@ var transport = {
 
 var transporter = nodemailer.createTransport(transport);
 
-module.exports = function sendEmail(to, subject, message) {
+module.exports = function sendEmail(to, name, message, res) {
 	const mailOptions = {
 		from: 'admin@tabletopmtg.com',
-		to: 'azourelli@gmail.com',
-		subject,
+		to: 'azourelli+cheapflights@gmail.com',
+		subject: `Cheap flights Message from ${name}`,
 		html: message
 	};
 
 	transporter.sendMail(mailOptions, (error) => {
 		if (error) {
-			console.log(error);
 		}
+		res.status(200).json({ success: 'success' });
 	});
 };

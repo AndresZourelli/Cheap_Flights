@@ -50,10 +50,29 @@ class ControlPanel extends Component {
 			},
 			destination: {
 				TitleText: "What is the trip's destination?",
-				elementType: 'input',
+				elementType: 'select',
 				elementConfig: {
-					type: 'text',
-					placeholder: 'City Name'
+					options: [
+						{ value: 'select_city', displayValue: 'Select Destination City' },
+						{ value: 'Bangkok', displayValue: 'Bangkok' },
+						{ value: 'London', displayValue: 'London' },
+						{ value: 'Paris', displayValue: 'Paris' },
+						{ value: 'Dubai', displayValue: 'Dubai' },
+						{ value: 'Singapore', displayValue: 'Singapore' },
+						{ value: 'Kuala Lumpar', displayValue: 'Kuala Lumpar' },
+						{ value: 'Istanbul', displayValue: 'Istanbul' },
+						{ value: 'Tokyo', displayValue: 'Tokyo' },
+						{ value: 'Seoul', displayValue: 'Seoul' },
+						{ value: 'Phuket', displayValue: 'Phuket' },
+						{ value: 'Pattaya', displayValue: 'Pattaya' },
+						{ value: 'Palma de Mallorca', displayValue: 'Palma de Mallorca' },
+						{ value: 'Milan', displayValue: 'Milan' },
+						{ value: 'Hong Kong', displayValue: 'Hong Kong' },
+						{ value: 'Barcelona', displayValue: 'Barcelona' },
+						{ value: 'Osaka', displayValue: 'Osaka' },
+						{ value: 'Bali', displayValue: 'Bali' },
+						{ value: 'Amsterdam', displayValue: 'Amsterdam' }
+					]
 				},
 				value: '',
 				validation: {

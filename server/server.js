@@ -56,6 +56,6 @@ app.get('/availableCities', (req, res) => {
 });
 
 app.post('/sendEmail', (req, res) => {
-	const { to, subject, message } = req.body;
-	sendEmail(to, subject, message);
+	const { to, name, message } = req.body;
+	sendEmail(to, name, message, res);
 });

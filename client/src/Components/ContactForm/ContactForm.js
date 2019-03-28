@@ -26,7 +26,9 @@ export default class ContactForm extends Component {
 		axios
 			.post('http://localhost:5000/sendEmail', data)
 			.then((res) => {
-				this.setState({ sent: true }, this.resetForm());
+				if (res.status === 200) {
+					this.setState({ sent: true }, this.resetForm());
+				}
 			})
 			.catch((err) => {
 				console.log('Message not sent', err);

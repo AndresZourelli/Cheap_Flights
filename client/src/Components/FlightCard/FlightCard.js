@@ -15,6 +15,7 @@ const FlightCard = (props) => {
 	} else {
 		arrivingflightstops = flight.arrivingflightstops + ' stops';
 	}
+	console.log(flight);
 	return (
 		<div key={flight.id} className="CityData-items">
 			<div className="ticket">
@@ -27,7 +28,10 @@ const FlightCard = (props) => {
 						</div>
 					</div>
 					<div className="image-container">
-						<img src={flight.mainimageurl} alt="" />
+						<img
+							src={require(`./../../images/Destination City/${flight.destination}.jpg`)}
+							alt={flight.departingcity}
+						/>
 						<div className="shadowbox">
 							<div className="shadowbox-text">
 								<div className="CityData-flight-travel-info-parent">
