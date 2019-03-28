@@ -4,7 +4,8 @@ const app = express();
 const knex = require('knex');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const users = require('./users');
+const users = require('./server components/users');
+const sendEmail = require('./server components/contactform');
 // enable all CORS requests
 app.use(cors());
 
@@ -52,4 +53,9 @@ app.get('/availableCities', (req, res) => {
 	db('city_names').select('*').then((ress) => {
 		res.json({ payload: ress });
 	});
+});
+
+app.post('/sendEmail', (req, res) => {
+	const { to, subject, message } = req.body;
+	sendEmail(to, subject, message);
 });

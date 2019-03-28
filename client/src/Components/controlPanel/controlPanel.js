@@ -22,7 +22,9 @@ class ControlPanel extends Component {
 						{ value: 'Los Angeles', displayValue: 'Los Angeles' },
 						{ value: 'New York', displayValue: 'New York' },
 						{ value: 'San Francisco', displayValue: 'San Francisco' },
-						{ value: 'Boston', displayValue: 'Boston' }
+						{ value: 'Chicago', displayValue: 'Chicago' },
+						{ value: 'Dalla-Fort Worth', displayValue: 'Dallas-Fort Worth' },
+						{ value: 'Philadelphia', displayValue: 'Philadelphia' }
 					]
 				},
 				validation: {

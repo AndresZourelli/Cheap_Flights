@@ -20,7 +20,6 @@ class CityPage extends Component {
 
 		var cityName = [];
 		if (this.props.citys.payload && this.props.citys.payload.length > 0) {
-			console.log(this.props.citys.payload);
 			cityName = this.props.citys.payload[0].departingcity;
 		}
 

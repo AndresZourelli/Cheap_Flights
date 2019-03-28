@@ -24,12 +24,12 @@ export default class ContactForm extends Component {
 		};
 
 		axios
-			.post('API_URI', data)
+			.post('http://localhost:5000/sendEmail', data)
 			.then((res) => {
 				this.setState({ sent: true }, this.resetForm());
 			})
-			.catch(() => {
-				console.log('Message not sent');
+			.catch((err) => {
+				console.log('Message not sent', err);
 			});
 	};
 
@@ -55,7 +55,7 @@ export default class ContactForm extends Component {
 					<textarea
 						onChange={(e) => this.setState({ message: e.target.value })}
 						name="message"
-						className="message-input"
+						className="InputElement"
 						type="text"
 						placeholder="Please write your message here"
 						value={this.state.message}
@@ -69,7 +69,7 @@ export default class ContactForm extends Component {
 					<input
 						onChange={(e) => this.setState({ name: e.target.value })}
 						name="name"
-						className="message-name"
+						className="InputElement"
 						type="text"
 						placeholder="Your Name"
 						value={this.state.name}
@@ -82,7 +82,7 @@ export default class ContactForm extends Component {
 					<input
 						onChange={(e) => this.setState({ email: e.target.value })}
 						name="email"
-						className="message-email"
+						className="InputElement"
 						type="email"
 						placeholder="your@email.com"
 						required

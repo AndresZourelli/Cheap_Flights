@@ -1,19 +1,15 @@
 import { FETCH_CITIES, SPECIFIC_CITY, CLEAR_CITY, NEW_FLIGHT } from './types';
 import axios from 'axios';
 export const fetchCities = (value) => (dispatch) => {
-	axios(`http://localhost:5000/getCities`)
-		.then((cities) => {
-			dispatch({
-				type: FETCH_CITIES,
-				payload: cities.data.payload
-			});
-		})
-		.then((res) => console.log('success fetchCities', res));
+	axios(`http://localhost:5000/getCities`).then((cities) => {
+		dispatch({
+			type: FETCH_CITIES,
+			payload: cities.data.payload
+		});
+	});
 };
 
 export const newFlight = (cityData) => (dispatch) => {
-	console.log(cityData);
-	console.log(JSON.stringify(cityData));
 	axios('http://localhost:5000/NewFlights', {
 		method: 'POST',
 		headers: {
@@ -39,21 +35,19 @@ export const specificCity = (cityName) => (dispatch) => {
 		data: {
 			cityName: cityName
 		}
-	})
-		.then((cities) => {
-			if (cities.data.payload.length > 0) {
-				dispatch({
-					type: SPECIFIC_CITY,
-					payload: cities.data
-				});
-			} else {
-				dispatch({
-					type: SPECIFIC_CITY,
-					payload: []
-				});
-			}
-		})
-		.then(console.log('Success City Added'));
+	}).then((cities) => {
+		if (cities.data.payload.length > 0) {
+			dispatch({
+				type: SPECIFIC_CITY,
+				payload: cities.data
+			});
+		} else {
+			dispatch({
+				type: SPECIFIC_CITY,
+				payload: []
+			});
+		}
+	});
 };
 
 export const clearCity = () => (dispatch) => {

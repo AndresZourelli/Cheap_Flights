@@ -113,7 +113,7 @@ function numberofdays(date1, date2) {
 	date2 = new Date(date2);
 	var date = date2 - date1;
 	date = parseInt(date / 1000 / (3600 * 24));
-	console.log(date);
+
 	return date;
 }
 
