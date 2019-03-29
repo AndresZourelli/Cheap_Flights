@@ -15,7 +15,6 @@ const FlightCard = (props) => {
 	} else {
 		arrivingflightstops = flight.arrivingflightstops + ' stops';
 	}
-	console.log(flight);
 	return (
 		<div key={flight.id} className="CityData-items">
 			<div className="ticket">
