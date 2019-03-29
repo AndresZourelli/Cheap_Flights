@@ -16,12 +16,6 @@ app.use(bodyParser.json());
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '/../client/build')));
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname + '/../client/build/index.html'));
-});
-
 const db = knex({
 	client: 'pg',
 	connection: {
@@ -68,4 +62,10 @@ app.get('/api/availableCities', (req, res) => {
 app.post('/api/sendEmail', (req, res) => {
 	const { to, name, message } = req.body;
 	sendEmail(to, name, message, res);
+});
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname + '/../client/build/index.html'));
 });
